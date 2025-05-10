@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Converter</title>
+    <link rel="stylesheet" href="lengthConverter.css">
+
+</head>
+
+<body>
+
+    <h2 class="heading">Unit Converter</h2>
+
+    <div class="main-container">
+        <div class="feet-scale">
+            <label for="feet" class="ft-label">Feet</label><br>
+            <input type="number" id="feet" class="ft" placeholder="Feet Value">
+        </div>
+        <div class="equal-oper">
+            <h1>=</h1>
+        </div>
+        <div class="inch-scale">
+            <label for="Inch" class="inch-label">Inches</label> <br>
+            <input type="number" id="Inch" class="inch" placeholder="Inch Value">
+        </div>
+
+    </div> <!-- container -->
+
+</body>
+
+<script>
+    var feet = document.getElementById('feet');
+    var inch = document.getElementById('Inch');
+
+    feet.addEventListener('input', function () {
+
+        inch.value = this.value * 12;
+    });
+
+    inch.addEventListener('input', function () {
+        feet.value = this.value / 12;
+
+        if (!Number.isInteger(feet.value)) {
+            feet.value = feet.value.toFixed(2);
+
+        };
+
+    });
+
+
+</script>
+
+</html>
